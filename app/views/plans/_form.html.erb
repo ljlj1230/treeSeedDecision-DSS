@@ -1,0 +1,44 @@
+<%= form_with(model: plan) do |form| %>
+  <% if plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+        <% plan.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :决策名 %>
+    <%= form.number_field :plan, class:"form-control", placeholder:"请输入决策名" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :生长适应性权重 %>
+    <%= form.text_field :a1, class:"form-control", placeholder:"请输入0~1之间的值" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :抗旱性权重 %>
+    <%= form.text_field :a2, class:"form-control", placeholder:"请输入0~1之间的值" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :土壤适应性权重 %>
+    <%= form.text_field :a3, class:"form-control", placeholder:"请输入0~1之间的值" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :耐盐碱性权重 %>
+    <%= form.text_field :a4, class:"form-control", placeholder:"请输入0~1之间的值" %>
+  </div>
+
+<br>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>

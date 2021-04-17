@@ -1,0 +1,33 @@
+<h1>欢迎来到树种选择决策支持系统</h1>
+<br>
+<div class="card-group">
+	<div class="col">
+	    <div class="card">
+ 	     	<div class="card-body">
+   	     		<h5 class="card-title"><strong>树种维护</strong></h5>
+   	     		<p class="card-text">树种查看、树种编辑、树种删除</p>
+   	     		<%= link_to '去添加树种!', seeds_path, class:"btn btn-primary"%>
+     		</div>
+   	 	</div>
+	</div>
+
+	<div class="col">
+    	<div class="card">
+      		<div class="card-body">
+        		<h5 class="card-title"><strong>决策维护</strong></h5>
+        		<p class="card-text">决策查看、决策编辑、决策删除</p>
+        		<%= link_to '去添加决策!', plans_path, class:"btn btn-primary"%>
+     	 	</div>
+ 		</div>
+    </div>
+ 
+    <div class="col">
+    	<div class="card">
+      		<div class="card-body">
+        		<h5 class="card-title"><strong>项目管理</strong></h5>
+        		<p class="card-text">项目查看、项目编辑、项目删除</p>
+        		<%= link_to '去管理项目!', projects_path, class:"btn btn-primary"%>
+      		</div>
+  		</div>
+    </div>
+</div>

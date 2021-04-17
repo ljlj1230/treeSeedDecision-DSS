@@ -1,0 +1,124 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>项目id:</strong>
+  <%= @project.projectId %>
+</p>
+
+<p>
+  <strong>项目名:</strong>
+  <%= @project.name %>
+</p>
+
+<% seed1 = Seed.find_by(seedId: @project.seed1)%>
+<% seed2 = Seed.find_by(seedId: @project.seed2)%>
+<% seed3 = Seed.find_by(seedId: @project.seed3)%>
+<% seed4 = Seed.find_by(seedId: @project.seed4)%>
+<% seed5 = Seed.find_by(seedId: @project.seed5)%>
+<% plan = Plan.find_by(plan: @project.planId)%>
+
+<div>
+  <table class="table table-bordered table-sm">
+    <thead>
+    <tr>
+      <th>树种id</th>
+      <th>树种名</th>
+      <th>Z值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%=  seed1.seedId %></td>
+      <td><%=  seed1.name %></td>
+      <td><%= (seed1.growth*plan.a1 + seed1.drought*plan.a2 + seed1.soil*plan.a3 + seed1.salt*plan.a4)/(4*plan.a1+3*plan.a2+3*plan.a3+3*plan.a4)*100.round(4) %>分</td>
+    </tr>
+    
+    <tr>
+      <td><%=  seed2.seedId %></td>
+      <td><%=  seed2.name %></td>
+      <td><%= (seed2.growth*plan.a1 + seed2.drought*plan.a2 + seed2.soil*plan.a3 + seed2.salt*plan.a4)/(4*plan.a1+3*plan.a2+3*plan.a3+3*plan.a4)*100.round(4) %>分</td>
+    </tr>
+
+    <tr>
+      <td><%=  seed3.seedId %></td>
+      <td><%=  seed3.name %></td>
+      <td><%= (seed3.growth*plan.a1 + seed3.drought*plan.a2 + seed3.soil*plan.a3 + seed3.salt*plan.a4)/(4*plan.a1+3*plan.a2+3*plan.a3+3*plan.a4)*100.round(4) %>分</td>
+    </tr>
+
+    <tr>
+      <td><%=  seed4.seedId %></td>
+      <td><%=  seed4.name %></td>
+      <td><%= (seed4.growth*plan.a1 + seed4.drought*plan.a2 + seed4.soil*plan.a3 + seed4.salt*plan.a4)/(4*plan.a1+3*plan.a2+3*plan.a3+3*plan.a4)*100.round(4) %>分</td>
+    </tr>
+
+    <tr>
+      <td><%=  seed5.seedId %></td>
+      <td><%=  seed5.name %></td>
+      <td><%= (seed5.growth*plan.a1 + seed5.drought*plan.a2 + seed5.soil*plan.a3 + seed5.salt*plan.a4)/(4*plan.a1+3*plan.a2+3*plan.a3+3*plan.a4)*100.round(4) %>分</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+
+
+<!-- <p>
+  <strong>项目id:</strong>
+  <%= @project.projectId %>
+</p>
+
+<p>
+  <strong>项目名:</strong>
+  <%= @project.name %>
+</p>
+
+<% seed1 = Seed.find_by(seedId: @project.seed1)%>
+<% seed2 = Seed.find_by(seedId: @project.seed2)%>
+<% seed3 = Seed.find_by(seedId: @project.seed3)%>
+<% seed4 = Seed.find_by(seedId: @project.seed4)%>
+<% seed5 = Seed.find_by(seedId: @project.seed5)%>
+<% plan = Plan.find_by(plan: @project.planId)%>
+
+<table>
+  <thead>
+    <tr>
+      <th>树种id</th>
+      <th>树种名</th>
+      <th>Z值</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%=  seed1.seedId %></td>
+      <td><%=  seed1.name %></td>
+      <td><%= (seed1.growth*plan.a1 + seed1.drought*plan.a2 + seed1.soil*plan.a3 + seed1.salt*plan.a4).round(4) %></td>
+    </tr>
+    
+    <tr>
+      <td><%=  seed2.seedId %></td>
+      <td><%=  seed2.name %></td>
+      <td><%= (seed2.growth*plan.a1 + seed2.drought*plan.a2 + seed2.soil*plan.a3 + seed2.salt*plan.a4).round(4) %></td>
+    </tr>
+
+    <tr>
+      <td><%=  seed3.seedId %></td>
+      <td><%=  seed3.name %></td>
+      <td><%= (seed3.growth*plan.a1 + seed3.drought*plan.a2 + seed3.soil*plan.a3 + seed3.salt*plan.a4).round(4) %></td>
+    </tr>
+
+    <tr>
+      <td><%=  seed4.seedId %></td>
+      <td><%=  seed4.name %></td>
+      <td><%= (seed4.growth*plan.a1 + seed4.drought*plan.a2 + seed4.soil*plan.a3 + seed4.salt*plan.a4).round(4) %></td>
+    </tr>
+
+    <tr>
+      <td><%=  seed5.seedId %></td>
+      <td><%=  seed5.name %></td>
+      <td><%= (seed5.growth*plan.a1 + seed5.drought*plan.a2 + seed5.soil*plan.a3 + seed5.salt*plan.a4).round(4) %></td>
+    </tr>
+  </tbody>
+</table> -->
+
+<%= link_to '编辑', edit_project_path(@project), class:"btn btn-primary" %>
+<%= link_to '返回', projects_path, class:"btn btn-primary" %>

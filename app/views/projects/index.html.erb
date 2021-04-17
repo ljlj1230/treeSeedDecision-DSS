@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1><strong>项目维护</strong></h1>
+<br>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>项目id</th>
+      <th>项目名</th>
+      <th>包含树种</th>
+      <th>包含树种</th>
+      <th>包含树种</th>
+      <th>包含树种</th>
+      <th>包含树种</th>
+      <th>使用决策</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.projectId %></td>
+        <td><%= project.name %></td>
+        <td><%= project.seed1 %></td>
+        <td><%= project.seed2 %></td>
+        <td><%= project.seed3 %></td>
+        <td><%= project.seed4 %></td>
+        <td><%= project.seed5 %></td>
+        <td><%= project.planId %></td>
+        <td><%= link_to '查看/分析', project %></td>
+        <td><%= link_to '编辑', edit_project_path(project) %></td>
+        <td><%= link_to '删除', project, method: :delete, data: { confirm: '确定删除吗？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '项目添加', new_project_path, class:"btn btn-outline-primary" %>

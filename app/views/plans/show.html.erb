@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<!-- <div>
+  <table class="table table-bordered table-sm">
+  <tr>
+   <th><strong>决策名:</strong></th> 
+   <th><%= @plan.plan %></th>
+  </tr>
+  <tr>
+    <th><strong>生长适应性权重:</strong></th>
+    <th><%= @plan.a1 %></th>
+  </tr>
+  <tr>
+    <th><strong>抗旱性权重:</strong></th>
+    <th><%= @plan.a2 %></th>
+  </tr>
+  <tr>
+    <th><strong>土壤适应性权重:</strong></th>
+    <th><%= @plan.a3 %></th>
+  </tr>
+  <tr>
+    <th><strong>耐盐碱性权重:</strong></th>
+    <th><%= @plan.a4 %></th>
+  </tr>
+  </table>
+</div> -->
+
+
+<p>
+  <strong>决策名:</strong>
+  <%= @plan.plan %>
+</p>
+
+<p>
+  <strong>生长适应性权重:</strong>
+  <%= @plan.a1 %>
+</p>
+
+<p>
+  <strong>抗旱性权重:</strong>
+  <%= @plan.a2 %>
+</p>
+
+<p>
+  <strong>土壤适应性权重:</strong>
+  <%= @plan.a3 %>
+</p>
+
+<p>
+  <strong>耐盐碱性权重:</strong>
+  <%= @plan.a4 %>
+</p>
+
+<%= link_to '编辑', edit_plan_path(@plan), class:"btn btn-primary" %> 
+<%= link_to '返回', plans_path, class:"btn btn-primary" %>

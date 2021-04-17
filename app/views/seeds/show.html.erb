@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<!-- <div>
+  <table class="table table-bordered table-sm">
+  <tr>
+   <th><strong>树种id：</strong></th> 
+   <th><%= @seed.seedId %></th>
+  </tr>
+  <tr>
+    <th><strong>树种名:</strong></th>
+    <th><%= @seed.name %></th>
+  </tr>
+  <tr>
+    <th><strong>可用状态:</strong></th>
+    <th><%= @seed.state %></th>
+  </tr>
+  <tr>
+    <th><strong>生长适应性:</strong></th>
+    <th><%= @seed.growth %></th>
+  </tr>
+  <tr>
+    <th><strong>抗旱性:</strong></th>
+    <th><%= @seed.drought %></th>
+  </tr>
+  <tr>
+    <th><strong>土壤适应性:</strong></th>
+    <th><%= @seed.soil %></th>
+  </tr>
+  <tr>
+    <th><strong>耐盐碱性:</strong></th>
+    <th><%= @seed.salt %></th>
+  </tr>
+  </table>
+</div> -->
+
+<p>
+  <strong>树种id:</strong>
+  <%= @seed.seedId %>
+</p>
+
+<p>
+  <strong>树种名:</strong>
+  <%= @seed.name %>
+</p>
+
+<p>
+  <strong>可用状态:</strong>
+  <%= @seed.state %>
+</p>
+
+<p>
+  <strong>生长适应性:</strong>
+  <%= @seed.growth %>
+</p>
+
+<p>
+  <strong>抗旱性:</strong>
+  <%= @seed.drought %>
+</p>
+
+<p>
+  <strong>土壤适应性:</strong>
+  <%= @seed.soil %>
+</p>
+
+<p>
+  <strong>耐盐碱性:</strong>
+  <%= @seed.salt %>
+</p>
+
+<%= link_to '编辑', edit_seed_path(@seed), class:"btn btn-primary" %> 
+<%= link_to '返回', seeds_path, class:"btn btn-primary" %>

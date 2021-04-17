@@ -1,0 +1,57 @@
+<%= form_with(model: project) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :项目id %>
+    <%= form.number_field :projectId, class:"form-control", placeholder:"请输入项目id"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :项目名 %>
+    <%= form.text_field :name, class:"form-control", placeholder:"请输入项目名"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :包含树种编号1 %>
+    <%= form.number_field :seed1, class:"form-control", placeholder:"请输入树种1"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :包含树种编号2 %>
+    <%= form.number_field :seed2, class:"form-control", placeholder:"请输入树种2"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :包含树种编号3 %>
+    <%= form.number_field :seed3, class:"form-control", placeholder:"请输入树种3"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :包含树种编号4 %>
+    <%= form.number_field :seed4, class:"form-control", placeholder:"请输入树种4"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :包含树种编号5 %>
+    <%= form.number_field :seed5, class:"form-control", placeholder:"请输入树种5"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :使用决策 %>
+    <%= form.number_field :planId, class:"form-control", placeholder:"请输入树种6"  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>

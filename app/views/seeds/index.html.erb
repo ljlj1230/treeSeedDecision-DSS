@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1><strong>树种维护</strong></h1>
+<br>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>树种id</th>
+      <th>树种名</th>
+      <th>可用状态</th>
+      <th>生长适应性</th>
+      <th>抗旱性</th>
+      <th>土壤适应性</th>
+      <th>耐盐碱性</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seeds.each do |seed| %>
+      <tr>
+        <td><%= seed.seedId %></td>
+        <td><%= seed.name %></td>
+        <td><%= seed.state %></td>
+        <td><%= seed.growth %></td>
+        <td><%= seed.drought %></td>
+        <td><%= seed.soil %></td>
+        <td><%= seed.salt %></td>
+        <td><%= link_to '查看', seed %></td>
+        <td><%= link_to '编辑', edit_seed_path(seed) %></td>
+        <td><%= link_to '删除', seed, method: :delete, data: { confirm: '确定删除吗' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '树种添加', new_seed_path, class:"btn btn-outline-primary" %>

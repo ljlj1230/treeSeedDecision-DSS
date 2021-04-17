@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1><strong>决策维护</strong></h1>
+<br>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>决策名</th>
+      <th>生长适应性权重</th>
+      <th>抗旱性权重</th>
+      <th>土壤适应性权重</th>
+      <th>耐盐碱性权重</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plans.each do |plan| %>
+      <tr>
+        <td><%= plan.plan %></td>
+        <td><%= plan.a1 %></td>
+        <td><%= plan.a2 %></td>
+        <td><%= plan.a3 %></td>
+        <td><%= plan.a4 %></td>
+        <td><%= link_to '查看', plan %></td>
+        <td><%= link_to '编辑', edit_plan_path(plan) %></td>
+        <td><%= link_to '删除', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '决策添加', new_plan_path, class:"btn btn-outline-primary" %>

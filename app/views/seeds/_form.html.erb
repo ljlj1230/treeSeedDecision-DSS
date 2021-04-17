@@ -1,0 +1,54 @@
+<%= form_with(model: seed) do |form| %>
+  <% if seed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seed.errors.count, "error") %> prohibited this seed from being saved:</h2>
+
+      <ul>
+        <% seed.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :树种id %>
+    <%= form.number_field :seedId, class:"form-control", placeholder:"请输入树种id" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :树种名 %>
+    <%= form.text_field :name, class:"form-control", placeholder:"请输入树种名" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :可用状态 %>
+    <%= form.check_box :state %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :生长适应性 %>
+    <%= form.select :growth, [["较弱", 1], ["偏弱", 2], ["较好", 3], ["极好", 4]], class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :抗旱性 %>
+    <%= form.select :drought, [["较弱", 1], ["普通", 2], ["良好", 3]], class:"form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :土壤适应性 %>
+    <%= form.select :soil, [["较弱", 1], ["普通", 2], ["良好", 3]], class:"form-control"  %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :耐盐碱性 %>
+    <%= form.select :salt, [["较弱", 1], ["普通", 2], ["良好", 3]], class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+
+  
+<% end %>
